@@ -2,7 +2,7 @@
 require_once "GamesCRUD.class.php";
 $gamesCRUD = new GamesCRUD;
 
-$gamesCRUD->loadingGames();
+$gamesCRUD->loadingGames($db, $user, $pass, $host, $port, $options);
 
 ob_start() ?>
 

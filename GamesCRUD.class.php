@@ -1,6 +1,7 @@
 <?php
 require_once "Model.class.php";
 require_once "Games.class.php";
+include ("config.php");
 
 class GamesCRUD extends Model
 {
@@ -16,9 +17,9 @@ class GamesCRUD extends Model
         return $this->games;
     }
 
-    public function loadingGames()
+    public function loadingGames($db, $user, $pass, $host, $port, $options)
     {
-        $request = $this->getDb()->prepare("SELECT * FROM games");
+        $request = $this->getDb($db, $user, $pass, $host, $port, $options)->prepare("SELECT * FROM games");
         $request->execute();
 
         $myGames = $request->fetchAll(PDO::FETCH_ASSOC);

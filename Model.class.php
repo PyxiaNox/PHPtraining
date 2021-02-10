@@ -3,7 +3,7 @@
 abstract class Model{
     private static $pdo;
 
-    private static function setDb($db = 'phptraining', $user = 'root', $pass = '', $host = 'localhost', $port = '3306', $options = array())
+    private static function setDb($db, $user, $pass, $host, $port, $options)
     {
         if(empty($options[PDO::ATTR_ERRMODE]))
             {
@@ -19,7 +19,7 @@ abstract class Model{
             }
         }
 
-    protected function getDb($db = 'phptraining', $user = 'root', $pass = '', $host = 'localhost', $port = '3306', $options = array())
+    protected function getDb($db, $user, $pass, $host, $port, $options)
     {
         if(self::$pdo === null)
         {
