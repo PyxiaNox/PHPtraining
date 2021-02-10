@@ -7,6 +7,8 @@ class Games{
     private $year;
     private $platform;
 
+    public static $games;
+
     public function __construct($id, $title, $illustration, $type, $year, $platform)
     {
         $this->id = $id;
@@ -15,6 +17,7 @@ class Games{
         $this->type = $type;
         $this->year = $year;
         $this->platform = $platform;
+        self::$games[] = $this;
     }
 
     public function getId()

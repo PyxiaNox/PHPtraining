@@ -6,8 +6,6 @@ $game2 = new Games(2, "Secret of Evermore", "secretofevermore.jpg", "Action-RPG"
 $game3 = new Games(3, "Age of Empires II : Age of the Kings", "ageofempires2.jpg", "RTS", 1999, "PC");
 $game4 = new Games(4, "Quake", "quake.jpg", "FPS", 1996, "PC - Nintendo 64");
 
-$games = [$game1, $game2, $game3, $game4];
-
 ob_start() ?>
 
 <br>Les jeux vidéo référencés sur le site.<br><br>
@@ -24,14 +22,14 @@ ob_start() ?>
         </tr>
     </thead>
     <tbody>
-        <?php for($i=0; $i <count($games); $i++) : ?>
+        <?php for($i=0; $i <count(Games::$games); $i++) : ?>
 
         <tr class="table-light">
-            <th scope="row"><?= $games[$i]->getTitle() ?></th>
-            <td><img src="public/assets/img/<?= $games[$i]->getIllustration() ?>" width="80px"></td>
-            <td><?= $games[$i]->getType() ?></td>
-            <td><?= $games[$i]->getYear() ?></td>
-            <td><?= $games[$i]->getPlatform() ?></td>
+            <th scope="row"><?= Games::$games[$i]->getTitle() ?></th>
+            <td><img src="public/assets/img/<?= Games::$games[$i]->getIllustration() ?>" width="80px"></td>
+            <td><?= Games::$games[$i]->getType() ?></td>
+            <td><?= Games::$games[$i]->getYear() ?></td>
+            <td><?= Games::$games[$i]->getPlatform() ?></td>
             <td><a href="" class="btn btn-warning">Modifier</a></td>
             <td><a href="" class="btn btn-danger">Supprimer</a></td>
         </tr>
