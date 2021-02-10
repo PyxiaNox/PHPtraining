@@ -1,17 +1,8 @@
 <?php 
-require_once "Games.class.php"; 
-
-$game1 = new Games(1, "Zelda : A link to the Past", "alinktothepast.webp", "Aventure", 1992, "Super Nintendo");
-$game2 = new Games(2, "Secret of Evermore", "secretofevermore.jpg", "Action-RPG", 1996, "Super Nintendo");
-$game3 = new Games(3, "Age of Empires II : Age of the Kings", "ageofempires2.jpg", "RTS", 1999, "PC");
-$game4 = new Games(4, "Quake", "quake.jpg", "FPS", 1996, "PC - Nintendo 64");
-
 require_once "GamesCRUD.class.php";
 $gamesCRUD = new GamesCRUD;
-$gamesCRUD->addGame($game1);
-$gamesCRUD->addGame($game2);
-$gamesCRUD->addGame($game3);
-$gamesCRUD->addGame($game4);
+
+$gamesCRUD->loadingGames();
 
 ob_start() ?>
 
