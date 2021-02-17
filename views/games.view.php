@@ -1,10 +1,6 @@
 <?php 
-require_once "GamesCRUD.class.php";
-$gamesCRUD = new GamesCRUD;
-
-$gamesCRUD->loadingGames($db, $user, $pass, $host, $port, $options);
-
-ob_start() ?>
+ob_start() 
+?>
 
 <br>Les jeux vidéo référencés sur le site.<br><br>
 
@@ -21,7 +17,6 @@ ob_start() ?>
     </thead>
     <tbody>
         <?php 
-        $games = $gamesCRUD->getGames();
         for($i=0; $i <count($gamesCRUD->getGames()); $i++) : ?>
 
         <tr class="table-light">
@@ -43,5 +38,5 @@ ob_start() ?>
 <?php
 $content = ob_get_clean();
 $title = "Jeux vidéo";
-require "template.php";
+require "views/template.php";
 ?>
